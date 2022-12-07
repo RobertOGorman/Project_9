@@ -1,8 +1,8 @@
-# Project 4: Around The U.S.
+# Project 9: Around The U.S.
 
 ### Overview
 
-This is a project which features an interactive page where users can add, remove, or like photos. 
+This project features an interactive page where users can both edit their profile details as well as adding, removing, or liking new cards. 
 
 
 ### Technologies
@@ -11,4 +11,4 @@ HTML, CSS, Javascript
 
 ### Github Pages
 
-[Project Link](https://robertogorman.github.io/web_project_4/)
+[Project Link](https://robertogorman.github.io/web_project_9/)
