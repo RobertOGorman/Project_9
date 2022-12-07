@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Around The U.S.</title>
+  </head>
+  <body class="page">
+    <header class="header">
+      <img
+        src="<%=require('./images/header.svg')%>"
+        alt="Around the U.S."
+        class="header__logo"
+      />
+    </header>
+    <main class="body">
+      <section class="profile">
+        <img
+          src="<%=require('./images/cousteau.png')%>"
+          alt="French explorer, Jacques Cousteau"
+          class="profile__image"
+        />
+        <div class="profile__details">
+          <div class="profile__text">
+            <h1 class="profile__name">Jacques Cousteau</h1>
+            <p class="profile__title">Explorer</p>
+          </div>
+          <button
+            class="profile__edit-button"
+            type="button"
+            aria-label="edit"
+          ></button>
+        </div>
+        <button
+          class="profile__add-button"
+          id="add-button"
+          type="button"
+          aria-label="add"
+        ></button>
+      </section>
+      <section class="cards">
+        <ul class="cards__array"></ul>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="footer__text">&copy; 2021 Around The U.S.</p>
+    </footer>
+    <div class="popup" id="edit-popup">
+      <div class="popup__content">
+        <form
+          class="popup__form popup__form_type_edit"
+          id="edit-profile-form"
+          name="profile-edit"
+        >
+          <h3 class="popup__title">Edit profile</h3>
+          <input
+            name="name"
+            placeholder="Name"
+            id="owner-name"
+            required
+            minlength="2"
+            maxlength="40"
+            type="text"
+            class="popup__input popup__input_type_name popup__input_type_error"
+          />
+          <span
+            class="popup__error popup__error_visible"
+            id="owner-name-error"
+          ></span>
+          <input
+            name="title"
+            placeholder="About"
+            id="owner-description"
+            required
+            minlength="2"
+            maxlength="200"
+            type="text"
+            class="popup__input popup__input_type_title popup__input_type_error"
+          />
+          <span
+            class="popup__error popup__error_visible"
+            id="owner-description-error"
+          ></span>
+          <button class="popup__button" type="submit" aria-label="save">
+            Save
+          </button>
+        </form>
+        <button
+          class="popup__close-button"
+          type="button"
+          aria-label="close"
+        ></button>
+      </div>
+    </div>
+
+    <div class="popup" id="add-popup">
+      <div class="popup__content">
+        <form class="popup__form" id="add-card-form">
+          <h3 class="popup__title">New Place</h3>
+          <input
+            name="name"
+            placeholder="Title"
+            id="name"
+            minlength="2"
+            maxlength="30"
+            type="text"
+            class="popup__input popup__input_type_name popup__input_type_error"
+            required
+          />
+          <span
+            class="popup__error popup__error_visible"
+            id="name-error"
+          ></span>
+          <input
+            name="link"
+            placeholder="Image Link"
+            id="title"
+            minlength="1"
+            type="url"
+            class="popup__input popup__input_type_title popup__input_type_error"
+            required
+          />
+          <span
+            class="popup__error popup__error_visible"
+            id="title-error"
+          ></span>
+          <button class="popup__button" type="submit" aria-label="save">
+            Create
+          </button>
+        </form>
+        <button
+          class="popup__close-button"
+          type="button"
+          aria-label="close"
+        ></button>
+      </div>
+    </div>
+
+    <div class="popup" id="preview-popup">
+      <div class="popup__content popup__content_preview">
+        <button
+          class="popup__close-button"
+          type="button"
+          aria-label="close"
+        ></button>
+        <img class="popup__preview-image" src="#" alt="#" />
+        <h3 class="popup__preview-text"></h3>
+      </div>
+    </div>
+
+    <template id="card-template">
+      <div class="card">
+        <li class="cards__place">
+          <img src="#" alt="Yosemite Valley" class="card__image" />
+          <img
+            src="<%=require('./images/Trash.svg')%>"
+            alt="delete button"
+            class="cards__delete"
+          />
+          <div class="cards__location">
+            <h2 class="cards__location-title"></h2>
+            <button class="cards__like-button" type="button"></button>
+          </div>
+        </li>
+      </div>
+    </template>
+  </body>
+</html>

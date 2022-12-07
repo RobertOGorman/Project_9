@@ -1,0 +1,5 @@
+.popup__preview-image {
+    background-color: transparent;
+    max-height: 75vh;
+    max-width: 75vw;
+}
